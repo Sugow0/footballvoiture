@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
    
    [SerializeField] private LayerMask groundLayer;
    [SerializeField] private WheelCollider[] wheelColliders;
+   [SerializeField] private ParticleSystem ps;
    
     public float Speed = 600.0f;
     public float AccelerationAmount = 0;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
         AS = GetComponent<AudioSource>();
         GM = FindFirstObjectByType<GameManager>();
         AS.volume = GM.audioVolume;
+        ps.Stop();
     }
 
     public void AccelerateCallback(InputAction.CallbackContext obj)
@@ -74,6 +76,7 @@ public class PlayerController : MonoBehaviour
     
     void FixedUpdate()
     {
+        ps.Pause();
         bool wheelonfloor = false;
         foreach (WheelCollider wheel in wheelColliders)
         {
@@ -90,10 +93,22 @@ public class PlayerController : MonoBehaviour
         
         
         isGrounded = wheelonfloor;
-
+    
         if (isBoosting)
         {
             rb.linearVelocity += transform.forward * (Speed * BoostAmount * Time.fixedDeltaTime * Boost);
+            if (!ps.isPlaying)
+            {
+                ps.Play();
+            }
+            
+        }
+        else
+        {
+            if (ps.isPlaying)
+            {
+                ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
         }
 
         if (isAccelerating)
@@ -106,7 +121,19 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity += transform.forward * (Speed * AccelerationAmount * Time.fixedDeltaTime);
             if (isBoosting)
             {
-                rb.linearVelocity += transform.forward * (Speed * BoostAmount * AccelerationAmount * Time.fixedDeltaTime * Boost);
+                rb.linearVelocity += transform.forward * (Speed * BoostAmount * Time.fixedDeltaTime * Boost);
+                if (!ps.isPlaying)
+                {
+                    ps.Play();
+                }
+            
+            }
+            else
+            {
+                if (ps.isPlaying)
+                {
+                    ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                }
             }
           
 

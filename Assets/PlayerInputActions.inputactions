@@ -76,6 +76,17 @@
                 },
                 {
                     "name": "",
+                    "id": "de4fef82-48ad-4789-b54a-d1e6615fcd12",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d5f103bc-05e4-4c74-87c1-02d2cef13ab1",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
