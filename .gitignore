@@ -1,0 +1,39 @@
+# Fichiers et dossiers générés par Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+Assets/AssetStoreTools*
+
+# Fichiers générés par Visual Studio
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# Fichiers générés par MonoDevelop
+*.pidb
+*.userprefs
+
+# Fichiers de caches
+*.stackdump
+
+# Fichiers spécifiques à l'éditeur Unity
+sysinfo.txt
+
+# Fichiers système
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Dossiers de configuration d'IDE
+.vscode/
+.idea/
