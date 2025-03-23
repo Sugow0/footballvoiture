@@ -1,4 +1,4 @@
-# footballvoiture
+# Football Voiture
 
 Rocket Lag est un rocket-league like. Le but est de jouer au foot mais avec une voiture et un ballon 2x plus gros de la voiture.
 
@@ -11,6 +11,13 @@ Rocket Lag est un rocket-league like. Le but est de jouer au foot mais avec une 
  - Pouvoir marquer des buts
  - Ui checker les score
  - Menu pour rejoindre une game
+
+ ## Features Ajoutes
+
+- Mechanique de Boost:
+   - Appuyer sur le click gauche de la souris ou la touche G pour ajouter de la vitessez
+   - Effet de particule quand Boost
+
 
 
 ## Authors
